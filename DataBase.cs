@@ -8,13 +8,9 @@ namespace WebPage
 {
     public class DataBase
     {
-
-         /// <summary>
-         /// 12321
-         /// </summary>
         private static readonly string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|\DataBase1.mdf';Integrated Security = True;";
 
-        public Users Load(string Login, string Pasword )
+        public static Users Load(string Login, string Pasword )
         {
             
             Users users = new Users();
@@ -45,11 +41,14 @@ namespace WebPage
 
             }
             return users;
-           
         }
 
+        internal static Users Load(object id, string login, string pasword)
+        {
+            throw new NotImplementedException();
+        }
 
-        public void Save(string Login, string Sesion)
+        public static void Save(string Login, string Sesion)
         {
             
 
@@ -76,11 +75,11 @@ namespace WebPage
                 }
 
             }
-           
+            
         }
 
 
-        public Users LoadSesion(string Sesion)
+        public static Users LoadSesion(string Sesion)
         {
             Users users = new Users();
 
@@ -108,12 +107,11 @@ namespace WebPage
 
             }
             return users;
-           
         }
 
-        public void Clear(string Login)
+        public static Users Clear(string Login)
         {
-           
+            Users article = new Users();
 
             using (SqlConnection connection = new SqlConnection(cs))
             {
@@ -138,10 +136,10 @@ namespace WebPage
                 }
 
             }
-           
+            return article;
         }
 
-        public void SaveUsers(string Login, string Pasword)
+        public static void SaveUsers(string Login, string Pasword)
         {
     
 
@@ -168,11 +166,11 @@ namespace WebPage
                 }
 
             }
-            
+           
         }
 
 
-        public void SaveMessage(string Login, string Message)
+        public static void SaveMessage(string Login, string Message)
         {
 
 
@@ -199,10 +197,10 @@ namespace WebPage
                 }
 
             }
-          
+         
         }
 
-        public string[] LoadMessage(string Login, int countM)
+        public static string[] LoadMessage(string Login, int countM)
         {
 
             string[] message = new string[countM];
@@ -238,12 +236,11 @@ namespace WebPage
 
             }
             return message;
-           
         }
 
-        public void ClearMessage(string Login)
+        public static Users ClearMessage(string Login)
         {
-            
+            Users article = new Users();
 
             using (SqlConnection connection = new SqlConnection(cs))
             {
@@ -268,8 +265,7 @@ namespace WebPage
                 }
 
             }
-            
-        
+            return article;
         }
 
 

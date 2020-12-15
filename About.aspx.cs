@@ -59,7 +59,7 @@ namespace WebPage
                 Label2.Visible = true;
           
             }
-            Label3.Text = "Добро пожаловать! " + b;
+            Label3.Text = "Добро пожаловать " + b;
             Label3.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FE281D");
 
           
