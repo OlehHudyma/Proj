@@ -8,6 +8,10 @@ namespace WebPage
 {
     public class DataBase
     {
+
+         /// <summary>
+         /// 12321
+         /// </summary>
         private static readonly string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='|DataDirectory|\DataBase1.mdf';Integrated Security = True;";
 
         public Users Load(string Login, string Pasword )
